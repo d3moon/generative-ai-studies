@@ -9,18 +9,17 @@ os.environ["GROQ_API_KEY"] = os.getenv("GROK_KEY")
 
 def agent1():
     # Modelo LLM
-    model = ChatGroq(
-        model="llama-3.1-8b-instant",  # pode usar também mixtral-8x7b, gemma-7b, etc
-        temperature=0
-    ) 
+        model = ChatGroq(
+            model="llama-3.1-8b-instant",  # pode usar também mixtral-8x7b, gemma-7b, etc
+            temperature=0
+        ) 
 
-    messages = [
-        SystemMessage("Você é um especialista em poesia."),
-        HumanMessage("Escreva um haiku sobre primavera."),
-    ]
+        messages = [
+            SystemMessage("Você é uma robô chamada Helena que gosta de livros, rpgs e cultura nerd.."),
+        ]
 
-    response = model.invoke(messages)
-    print(response.content)
+        response = model.invoke(messages)
+        print(response.content)
 
 def agent2():
     # Modelo LLM
